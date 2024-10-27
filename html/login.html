@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Iniciar Sesión / Registrarse</title>
+    
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm" class="active" action="/login" method="post">
+            <h2>Iniciar Sesión</h2>
+            <div>
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" required>
+            </div>
+            <div>
+                <label for="loginPassword">Contraseña:</label>
+                <input type="password" id="loginPassword" name="password" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+            <div class="toggle">
+                <a href="#" id="showRegister">¿No tienes una cuenta? Regístrate</a>
+            </div>
+        </form>
+
+        <form id="registerForm" action="/register" method="post">
+            <h2>Registrarse</h2>
+            <div>
+                <label for="registerName">Nombre:</label>
+                <input type="text" id="registerName" name="name" required>
+            </div>
+            <div>
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="email" required>
+            </div>
+            <div>
+                <label for="registerPassword">Contraseña:</label>
+                <input type="password" id="registerPassword" name="password" required>
+            </div>
+            <div>
+                <label for="confirmPassword">Confirmar Contraseña:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit">Registrarse</button>
+            <div class="toggle">
+                <a href="#" id="showLogin">¿Ya tienes una cuenta? Inicia sesión</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const showRegister = document.getElementById('showRegister');
+        const showLogin = document.getElementById('showLogin');
+
+        showRegister.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.classList.remove('active');
+            registerForm.classList.add('active');
+        });
+
+        showLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            registerForm.classList.remove('active');
+            loginForm.classList.add('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Boletos </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- <h1>Eventos Disponibles</h1> -->
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="/html/login.html">Iniciar Sesion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="destacados" class="container">
+            <h2>Eventos Destacados</h2>
+            <div class="evento-destacado">
+                <img src="https://www.ifema.es/img/xl/grupo-rock-roll/grupo-rock-and-roll.jpeg" alt="Evento Destacado">              
+                <h3>Concierto de Rock en Vivo</h3>
+                <p>No te pierdas el concierto del año con las mejores bandas de rock.</p>
+                <button class="btn-comprar" data-evento="Concierto de Rock en Vivo" data-precio="50">Comprar Tickets - $50</button>
+            </div>
+        </section>
+
+        <section id="eventos" class="container">
+            <h2>Próximos Eventos</h2>
+            <div class="lista-eventos">
+                <div class="evento">
+                    <img src="https://www.palaumusica.cat/images/1335343/image_grid.webp" alt="Evento 1">
+                    <h3>Festival de Jazz</h3>
+                    <p>Fecha: 15 de Julio, 2024</p>
+                    <p>Lugar: Parque Central</p>
+                    <button class="btn-comprar" data-evento="Festival de Jazz" data-precio="30">Comprar Tickets - $30</button>
+                </div>
+                <div class="evento">
+                    <img src="https://dondeestalaura.com/wp-content/uploads/2023/10/IMG_20231026_194141.jpg" alt="Evento 2">
+                    <h3>Obra de Teatro: "El Fantasma de la Ópera"</h3>
+                    <p>Fecha: 22 de Agosto, 2024</p>
+                    <p>Lugar: Teatro Nacional</p>
+                    <button class="btn-comprar" data-evento="El Fantasma de la Ópera" data-precio="40">Comprar Tickets - $40</button>
+                </div>
+                <div class="evento">
+                    <img src="https://www.guatemala.com/fotos/2023/05/Galerias-de-Arte-en-Ciudad-de-Guatemala-885x500.jpg" alt="Evento 3">
+                    <h3>Exposición de Arte Moderno</h3>
+                    <p>Fecha: 5 de Septiembre, 2024</p>
+                    <p>Lugar: Museo de Arte Contemporáneo</p>
+                    <button class="btn-comprar" data-evento="Exposición de Arte Moderno" data-precio="20">Comprar Tickets - $20</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Comprar Tickets</h2>
+            <p id="modal-evento"></p>
+            <p id="modal-precio"></p>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" min="1" value="1">
+            <p id="total"></p>
+            <button id="confirmar-compra">Confirmar Compra</button>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
