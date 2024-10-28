@@ -3,76 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venta de Boletos </title>
+    <title>Compra de Boletos </title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <!-- <h1>Eventos Disponibles</h1> -->
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#eventos">Eventos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="/html/login.html">Iniciar Sesion</a></li>
-                </ul>
-            </nav>
+    <div class="navbar">
+        <div class="logo">Eventos</div>
+        <div class="actions">
+            <!-- <button>Vender Entradas</button>
+            <button>Asistencia</button> -->
+            <button>Iniciar Sesion</button>
         </div>
-    </header>
-
-    <main>
-        <section id="destacados" class="container">
-            <h2>Eventos Destacados</h2>
-            <div class="evento-destacado">
-                <img src="https://www.ifema.es/img/xl/grupo-rock-roll/grupo-rock-and-roll.jpeg" alt="Evento Destacado">              
-                <h3>Concierto de Rock en Vivo</h3>
-                <p>No te pierdas el concierto del año con las mejores bandas de rock.</p>
-                <button class="btn-comprar" data-evento="Concierto de Rock en Vivo" data-precio="50">Comprar Tickets - $50</button>
-            </div>
-        </section>
-
-        <section id="eventos" class="container">
-            <h2>Próximos Eventos</h2>
-            <div class="lista-eventos">
-                <div class="evento">
-                    <img src="https://www.palaumusica.cat/images/1335343/image_grid.webp" alt="Evento 1">
-                    <h3>Festival de Jazz</h3>
-                    <p>Fecha: 15 de Julio, 2024</p>
-                    <p>Lugar: Parque Central</p>
-                    <button class="btn-comprar" data-evento="Festival de Jazz" data-precio="30">Comprar Tickets - $30</button>
-                </div>
-                <div class="evento">
-                    <img src="https://dondeestalaura.com/wp-content/uploads/2023/10/IMG_20231026_194141.jpg" alt="Evento 2">
-                    <h3>Obra de Teatro: "El Fantasma de la Ópera"</h3>
-                    <p>Fecha: 22 de Agosto, 2024</p>
-                    <p>Lugar: Teatro Nacional</p>
-                    <button class="btn-comprar" data-evento="El Fantasma de la Ópera" data-precio="40">Comprar Tickets - $40</button>
-                </div>
-                <div class="evento">
-                    <img src="https://www.guatemala.com/fotos/2023/05/Galerias-de-Arte-en-Ciudad-de-Guatemala-885x500.jpg" alt="Evento 3">
-                    <h3>Exposición de Arte Moderno</h3>
-                    <p>Fecha: 5 de Septiembre, 2024</p>
-                    <p>Lugar: Museo de Arte Contemporáneo</p>
-                    <button class="btn-comprar" data-evento="Exposición de Arte Moderno" data-precio="20">Comprar Tickets - $20</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    </div>
     
+    <!-- <div class="search-bar">
+        <input type="text" placeholder="Evento, Artista o equipo">
+        <button>Buscar</button>
+    </div> -->
+    
+    <div class="categories">
+        <!-- <a href="#">Deportes</a> -->
+        <a href="#">Concierto</a>
+        <!-- <a href="#">Teatro y Comedia</a> -->
+        <a href="#">Ciudades Principales</a>
+    </div>
 
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Comprar Tickets</h2>
-            <p id="modal-evento"></p>
-            <p id="modal-precio"></p>
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" min="1" value="1">
-            <p id="total"></p>
-            <button id="confirmar-compra">Confirmar Compra</button>
+    <div class="categories">
+    <h1 class="text">Populares cerca de ti</h1>
+</div>
+    <div class="events">
+        <div class="events-card">
+            <img src="https://media.stubcloudstatic.com/stubhub-catalog/image/upload/t_thumb_169/f_auto/v1/performer/3704/8896788c54b3ec7e04d84c55b2f48500?_a=AJAJZWI0" alt="Luis Miguel">
+            <h3>Luis Miguel</h3>
         </div>
+
+        <div class="events-card">
+            <img src="https://media.stubcloudstatic.com/stubhub-catalog/image/upload/t_thumb_169/f_auto/v1/category/1/89be883d43c74fac844c210ee07ab552?_a=AJAJZWI0" alt="Keimenusik">
+            <h3>Keimenusik</h3>
+        </div>
+
+        <div class="events-card">
+        <img src="https://media.stubcloudstatic.com/stubhub-catalog/image/upload/t_thumb_169/f_auto/v1/category/1/b7f0fa845b3f5ce8fad42eb39a3dc474?_a=AJAJZWI0" alt="Afterlife">
+            <h3>Afterlife</h3>
+        </div>
+
+        <div class="events-card">
+        <img src="https://media.stubcloudstatic.com/stubhub-catalog/image/upload/t_thumb_169/f_auto/v1/performer/100018495/3b31bacaf519a269d0d030cd70d12480?_a=AJAJZWI0" alt="LoveofLesbian">
+            <h3>Love of Lesbian</h3>
+        </div>
+
+        <div class="events-card">
+        <img src="https://media.stubcloudstatic.com/stubhub-catalog/image/upload/t_thumb_169/f_auto/v1/category/1/563b3a90ede595de5214e086ffdf15e2?_a=AJAJZWI0" alt="TecateComuna">
+            <h3>Tecate Comuna</h3>
+        </div>
+
+        <div class="events-card">
+        <img src="https://media.stubcloudstatic.com/stubhub-catalog/image/upload/t_thumb_169/f_auto/v1/performer/8867/d41d8cd98f00b204e9800998ecf8427e?_a=AJAJZWI0" alt="BoletosAlejandoFernández">
+            <h3>Boletos Alejando Fernández</h3>
+        </div>
+
+        <div class="events-card">
+        <img src="https://media.stubcloudstatic.com/stubhub-catalog/image/upload/t_thumb_169/f_auto/v1/performer/102227450/cc6f8c55865323002263ceed85d0e5d0?_a=AJAJZWI0" alt="GrupoFrontera">
+            <h3>Grupo Frontera</h3>
+        </div>
+
+        <div class="events-card">
+        <img src="https://media.stubcloudstatic.com/stubhub-catalog/image/upload/t_thumb_169/f_auto/v1/category/1/4d6f9a5520ad4be423fd05d7dbea90c8?_a=AJAJZWI0" alt="Miranda!">
+            <h3>Miranda!</h3>
+        </div> 
     </div>
 
     <script src="/js/script.js"></script>

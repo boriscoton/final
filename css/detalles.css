@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f8;
+    color: #333;
+}
+
+.header {
+    background-color: #4a2c84;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-content {
+    width: 70%;
+    margin-right: 20px;
+}
+
+.event-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #4a2c84;
+}
+
+.event-info {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 5px;
+}
+
+.badge {
+    background-color: #e91e63;
+    color: #fff;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.tickets-left {
+    color: #333;
+    font-size: 0.8em;
+}
+
+.price {
+    font-weight: bold;
+    color: #4a2c84;
+    font-size: 1em;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+.seller-info,
+.guarantee-box {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.guarantee-title {
+    font-weight: bold;
+    color: #4a2c84;
+    margin-bottom: 10px;
+}
+
+.guarantee-list li {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.btn-sell {
+    background-color: #4a2c84;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-sell:hover {
+    background-color: #3a226a;
+}
