@@ -10,9 +10,9 @@ body {
 
 /* Barra de navegación */
 .navbar {
-    width: 100%;
-    background-color: #ffffff;
-    padding: 10px 20px;
+    width: 98%;
+    background-color: #643bbd;
+    padding: 8px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,8 +21,9 @@ body {
 
 .navbar .logo {
     font-weight: bold;
-    color: #6c00fa;
+    color: #ffffff;
     font-size: 24px;
+    margin-left: 3%;
 }
 
 .navbar .actions {
@@ -31,7 +32,7 @@ body {
 }
 
 .navbar button {
-    background-color: #6c00fa;
+    background-color: #0e03aa;
     color: white;
     border: none;
     padding: 15px 15px;
@@ -41,7 +42,7 @@ body {
 }
 
 .navbar button:hover {
-    background-color: #733ab9;
+    background-color: #081191;
 }
 
 /* Barra de búsqueda */
@@ -55,14 +56,14 @@ body {
 
 .search-bar input {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px 0 0 5px;
     outline: none;
 }
 
 .search-bar button {
-    padding: 10px 20px;
+    padding: 15px 25px;
     border: none;
     background-color: #6c00fa;
     color: white;
@@ -75,7 +76,7 @@ body {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin: 15px 0;
+    margin: 8px 0;
     font-size: 16px;
 }
 
@@ -103,7 +104,7 @@ body {
     background-color: white;
     width: 200px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
@@ -121,7 +122,7 @@ body {
 }
 
 .events-card h3 {
-    margin: 10px;
+    margin: 8px;
     font-size: 18px;
     color: #333;
 }
