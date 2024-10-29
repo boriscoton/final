@@ -1,3 +1,45 @@
+document.addEventListener('DOMContentLoaded', function(){
+    const loginform = document.getElementById('loginform');
+    const registerForm = document.getElementById('registerform');
+    const showRegister = document.getElementById('showregister');
+    const showLogin = document.getElementById('showlogin');
+
+    showLogin.addEventListener('click', function(e){
+        e.preventDefault();
+        loginform.classList.remove('active');
+        registerForm.classList.add('active');
+    });
+
+    showLogin.addEventListener('click', function(e){
+        e.preventDefault();
+        loginform.classList.add('active');
+        registerForm.classList.remove('active');
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Selecciona el modal y los elementos del modal
 // const modal = document.getElementById("modal");
 // const closeModal = document.querySelector(".close");
