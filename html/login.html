@@ -1,72 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login.css" />
     <title>Iniciar Sesión / Registrarse</title>
-    
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <form id="loginForm" class="active" action="/login" method="post">
-            <h2>Iniciar Sesión</h2>
-            <div>
-                <label for="loginEmail">Email:</label>
-                <input type="email" id="loginEmail" name="email" required>
-            </div>
-            <div>
-                <label for="loginPassword">Contraseña:</label>
-                <input type="password" id="loginPassword" name="password" required>
-            </div>
-            <button type="submit">Iniciar Sesión</button>
-            <div class="toggle">
-                <a href="#" id="showRegister">¿No tienes una cuenta? Regístrate</a>
-            </div>
-        </form>
+      <form
+        id="loginForm"
+        class="active"
+        action="http://localhost:3000/api/usuarios/login"
+        method="post"
+      >
+        <h2>Iniciar Sesión</h2>
+        <div>
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" name="correo" required />
+        </div>
+        <div>
+          <label for="loginPassword">Contraseña:</label>
+          <input
+            type="password"
+            id="loginPassword"
+            name="contraseña"
+            required
+          />
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+        <div class="toggle">
+          <a href="#" id="showRegister">¿No tienes una cuenta? Regístrate</a>
+        </div>
+      </form>
 
-        <form id="registerForm" action="/register" method="post">
-            <h2>Registrarse</h2>
-            <div>
-                <label for="registerName">Nombre:</label>
-                <input type="text" id="registerName" name="name" required>
-            </div>
-            <div>
-                <label for="registerEmail">Email:</label>
-                <input type="email" id="registerEmail" name="email" required>
-            </div>
-            <div>
-                <label for="registerPassword">Contraseña:</label>
-                <input type="password" id="registerPassword" name="password" required>
-            </div>
-            <div>
-                <label for="confirmPassword">Confirmar Contraseña:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-            </div>
-            <button type="submit">Registrarse</button>
-            <div class="toggle">
-                <a href="#" id="showLogin">¿Ya tienes una cuenta? Inicia sesión</a>
-            </div>
-        </form>
+      <form id="registerForm" action="/api/usuarios/registro" method="post">
+        <h2>Registrarse</h2>
+        <div>
+          <label for="registerName">Nombre:</label>
+          <input type="text" id="registerName" name="nombre" required />
+        </div>
+        <div>
+          <label for="registerEmail">Email:</label>
+          <input type="email" id="registerEmail" name="correo" required />
+        </div>
+        <div>
+          <label for="registerPassword">Contraseña:</label>
+          <input
+            type="password"
+            id="registerPassword"
+            name="contraseña"
+            required
+          />
+        </div>
+        <div>
+          <label for="confirmPassword">Confirmar Contraseña:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmarContraseña"
+            required
+          />
+        </div>
+        <button type="submit">Registrarse</button>
+        <div class="toggle">
+          <a href="#" id="showLogin">¿Ya tienes una cuenta? Inicia sesión</a>
+        </div>
+      </form>
     </div>
 
-    <!-- <script>
-        const loginForm = document.getElementById('loginForm');
-        const registerForm = document.getElementById('registerForm');
-        const showRegister = document.getElementById('showRegister');
-        const showLogin = document.getElementById('showLogin');
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const registerForm = document.getElementById("registerForm");
+      const showRegister = document.getElementById("showRegister");
+      const showLogin = document.getElementById("showLogin");
 
-        showRegister.addEventListener('click', (e) => {
-            e.preventDefault();
-            loginForm.classList.remove('active');
-            registerForm.classList.add('active');
+      showRegister.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginForm.classList.remove("active");
+        registerForm.classList.add("active");
+      });
+
+      showLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        registerForm.classList.remove("active");
+        loginForm.classList.add("active");
+      });
+
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Evitar el envío predeterminado del formulario
+
+          const formData = new FormData(this);
+          const data = Object.fromEntries(formData);
+          console.log(data);
+
+          try {
+            const response = await fetch(
+              "http://localhost:3000/api/usuarios/registro",
+              {
+                // Asegúrate de que la URL sea correcta
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json", // Este header es correcto si envías JSON
+                },
+                body: JSON.stringify(data),
+              }
+            );
+
+            const result = await response.json();
+
+            if (response.ok) {
+              alert(result.mensaje); // Mensaje de éxito
+            } else {
+              alert(result.error); // Mensaje de error
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Error al registrar el usuario");
+          }
         });
 
-        showLogin.addEventListener('click', (e) => {
-            e.preventDefault();
-            registerForm.classList.remove('active');
-            loginForm.classList.add('active');
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Evitar el envío predeterminado del formulario
+
+          const formData = new FormData(this);
+          const data = Object.fromEntries(formData);
+          console.log(data); // Opcional: ver los datos en la consola
+
+          try {
+            const response = await fetch(this.action, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              alert(result.mensaje); // Mensaje de éxito
+              // Redirigir a otra página (por ejemplo, al panel de usuario)
+              window.location.href = "/html/index.html"; // Cambia esta URL según tu ruta de destino
+            } else {
+              alert(result.error); // Mensaje de error
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Error al iniciar sesión");
+          }
         });
-    </script> -->
-</body>
+    </script>
+  </body>
 </html>
