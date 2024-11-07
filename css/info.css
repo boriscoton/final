@@ -1,0 +1,67 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    background-color: #f4f4f4; /* Color de fondo */
+    margin: 0; /* Eliminar márgenes */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo del encabezado */
+h1 {
+    text-align: center; /* Centrar el título */
+    color: #333; /* Color del texto */
+}
+
+/* Estilo del formulario */
+form {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario en la página */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Color de fondo del formulario */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo de las etiquetas */
+label {
+    display: block; /* Mostrar etiquetas como bloque */
+    margin-bottom: 8px; /* Espaciado inferior */
+    color: #555; /* Color de las etiquetas */
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espaciado inferior */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 4px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho */
+}
+
+/* Estilo para los errores */
+.error {
+    color: red; /* Color de texto de error */
+    font-size: 12px; /* Tamaño de fuente para errores */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Estilo del botón de envío */
+input[type="submit"] {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover para el botón */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}

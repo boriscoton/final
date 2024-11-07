@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 
+document.getElementById('logoutButton').addEventListener('click', function () {
+    // Eliminar el token de autenticación (si está almacenado en localStorage o cookies)
+    localStorage.removeItem('token'); // Si usas localStorage para almacenar el token
+
+    // Redirigir a la página de inicio de sesión
+    window.location.href = '/html/login.html'; // Cambia la ruta según tu archivo de login
+});
+
+
 
 
 
