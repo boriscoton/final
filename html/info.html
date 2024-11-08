@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra de Ticket</title>
+  <link rel="stylesheet" href="/css/info.css" />
+</head>
+<body>
+  <h1>Compra de Ticket</h1>
+  <form id="purchaseForm">
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="nit">NIT:</label>
+    <input type="text" id="nit" name="nit" required>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" required>
+
+    <label for="metodo_pago">Método de Pago:</label>
+    <select id="metodo_pago" name="metodo_pago" required>
+      <option value="">Seleccione un método de pago</option>
+      <option value="efectivo">Efectivo</option>
+      <option value="tarjeta">Tarjeta</option>
+    </select>
+
+    <button type="submit">Comprar Ticket</button>
+  </form>
+
+  <script>
+    document.getElementById('purchaseForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const nit = document.getElementById('nit').value;
+      const direccion = document.getElementById('direccion').value;
+      const metodo_pago = document.getElementById('metodo_pago').value;
+
+      const response = await fetch('http://localhost:3000/api/compras', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}` // Agrega el token JWT para autorización
+        },
+        body: JSON.stringify({ email, nit, direccion, metodo_pago })
+      });
+
+      if (response.ok) {
+        alert('Compra exitosa');
+        document.getElementById('purchaseForm').reset();
+      } else {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.error}`);
+      }
+    });
+  </script>
+</body>
+</html>

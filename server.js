@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
+
+
 // Función para generar el token JWT
 const generateToken = (user) => {
     return jwt.sign({ id: user.id, correo: user.correo }, process.env.JWT_SECRET, {
@@ -67,3 +69,4 @@ app.post('/api/usuarios/login', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+

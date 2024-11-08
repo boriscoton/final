@@ -17,6 +17,47 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 
+document.getElementById('logoutButton').addEventListener('click', function () {
+    // Eliminar el token de autenticación (si está almacenado en localStorage o cookies)
+    localStorage.removeItem('token'); // Si usas localStorage para almacenar el token
+
+    // Redirigir a la página de inicio de sesión
+    window.location.href = '/html/login.html'; // Cambia la ruta según tu archivo de login
+});
+
+// para registrar boletos a la base de datos
+document.getElementById("purchaseForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const usuario_id = document.getElementById("usuario_id").value;
+  const ticket_id = document.getElementById("ticket_id").value;
+  const cantidad = document.getElementById("cantidad").value;
+
+  try {
+    const response = await fetch("http://localhost:3000/api/compras", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ usuario_id, ticket_id, cantidad }),
+    });
+
+    if (response.ok) {
+      document.getElementById("successMessage").style.display = "block";
+      document.getElementById("errorMessage").style.display = "none";
+    } else {
+      document.getElementById("errorMessage").style.display = "block";
+      document.getElementById("successMessage").style.display = "none";
+    }
+  } catch (error) {
+    console.error("Error al realizar la compra:", error);
+    document.getElementById("errorMessage").style.display = "block";
+    document.getElementById("successMessage").style.display = "none";
+  }
+});
+
+
+
 
 
 
