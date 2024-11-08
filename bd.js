@@ -105,6 +105,27 @@ app.post("/api/usuarios/login", (req, res) => {
   );
 });
 
+// ruta para reistrar la compra de tickets
+app.post("/api/compras", (req, res) => {
+  const { usuario_id, ticket_id, cantidad } = req.body;
+
+  // verificar que todo los datos se presentan
+  if (!usuario_id || !ticket_id || !cantidad) {
+    return res.status(400).json({ error: "Faltan datos" });
+  }
+
+  // Insertar la compra en la table ventas
+  const query = "INSERT INTO ventas (usuario_id, ticket_id, cantidad) VALUES (?, ?, ?)";
+
+  db.query(query, [usuario_id, ticket_id, cantidad], (err, results) => {
+    if (err) {
+      console.error("error al registrar la compra:", err);
+      return res.status(500).json({ error: "Error en el servidor" });
+    }
+    res.status(201).json({ mensaje: "Compra registrada exitosamente" });
+  });
+});
+
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
